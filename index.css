@@ -1,0 +1,173 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+background: radial-gradient(circle,#0a0a0a,#000);
+color:#fff;
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+width:240px;
+height:100%;
+background:rgba(0,0,0,0.9);
+padding:25px;
+border-right:1px solid rgba(255,255,255,0.05);
+}
+
+.sidebar h2{
+color:#ffcc00;
+margin-bottom:30px;
+}
+
+.sidebar a{
+display:block;
+color:#aaa;
+margin:15px 0;
+text-decoration:none;
+transition:.3s;
+}
+.sidebar a:hover{
+color:#ff3c3c;
+transform:translateX(5px);
+}
+
+/* MAIN */
+.main{
+margin-left:260px;
+padding:30px;
+}
+
+/* HERO */
+.hero{
+position:relative;
+border-radius:15px;
+overflow:hidden;
+margin-bottom:25px;
+}
+.hero img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+.hero::after{
+content:'';
+position:absolute;
+width:100%;height:100%;
+background:linear-gradient(to right,rgba(0,0,0,0.8),transparent);
+}
+.hero-text{
+position:absolute;
+top:40px;
+left:30px;
+z-index:2;
+}
+
+/* CARDS */
+.cards{
+display:flex;
+gap:20px;
+}
+
+.card{
+flex:1;
+background:rgba(255,255,255,0.05);
+border-radius:15px;
+overflow:hidden;
+backdrop-filter:blur(10px);
+box-shadow:0 0 30px rgba(255,0,0,0.2);
+transition:.4s;
+}
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+}
+
+.card img{
+height:150px;
+width:100%;
+object-fit:cover;
+}
+
+.card-content{
+padding:15px;
+}
+
+/* BUTTON */
+.btn{
+background:linear-gradient(90deg,#ff0000,#ffcc00);
+border:none;
+padding:10px;
+border-radius:8px;
+color:black;
+width:100%;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* LOGIN */
+.auth{
+display:flex;
+height:100vh;
+}
+
+.auth-left{
+flex:1;
+}
+.auth-left img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.auth-right{
+flex:1;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+input{
+padding:10px;
+width:250px;
+margin:10px;
+border-radius:8px;
+border:none;
+}
+
+/* LOADER */
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+.spinner{
+border:5px solid #222;
+border-top:5px solid #ffcc00;
+border-radius:50%;
+width:50px;height:50px;
+animation:spin 1s linear infinite;
+}
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+/* TOAST */
+.toast{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#ffcc00;
+color:black;
+padding:10px 20px;
+border-radius:8px;
+opacity:0;
+transition:.3s;
+}
+.toast.show{opacity:1;}
