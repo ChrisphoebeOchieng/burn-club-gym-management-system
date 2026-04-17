@@ -13,11 +13,11 @@ if(!isset($_SESSION['email'])){
 $email = $_SESSION['email'];
 $name  = $_SESSION['name'];
 
-/* STATS */
+
 $total_workouts = $conn->query("SELECT COUNT(*) as t FROM workout_logs WHERE user_email='$email'")->fetch_assoc()['t'] ?? 0;
 $total_diets    = $conn->query("SELECT COUNT(*) as t FROM diet_logs WHERE user_email='$email'")->fetch_assoc()['t'] ?? 0;
 
-/* LATEST */
+
 $latest_workout = $conn->query("SELECT workout_type FROM workout_logs WHERE user_email='$email' ORDER BY id DESC LIMIT 1")->fetch_assoc()['workout_type'] ?? '—';
 
 $latest_diet_row = $conn->query("SELECT protein, habit FROM diet_logs WHERE user_email='$email' ORDER BY id DESC LIMIT 1")->fetch_assoc();
